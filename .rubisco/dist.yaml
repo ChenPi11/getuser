@@ -4,5 +4,5 @@ steps:
   - name: 🛠️ Build wheel distribution
     run: rubisco build
   - name: 📦 Build source distribution
-    run: rubisco srcdist --archive-type=zip+tar.gz
+    run: rubisco srcdist -d ru-dist
 
