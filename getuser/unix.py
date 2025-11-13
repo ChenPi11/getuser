@@ -73,7 +73,8 @@ if os.name == "posix":
 
         # 1. Base user information.
         uid_str = str(pwnam.pw_uid)
-        gecos = GECOS.parse(pwnam.pw_gecos)
+        _gecos = pwnam.pw_gecos
+        gecos = GECOS.parse(_gecos) if _gecos else GECOS.parse("")
         display_name = gecos.full_name or pwnam.pw_name
         home_directory = pwnam.pw_dir
 
@@ -125,4 +126,6 @@ if os.name == "posix":
             list[str]: A list of all usernames.
 
         """
+        if not hasattr(pwd, "getpwall"):
+            return [getpass.getuser()]
         return [pwnam.pw_name for pwnam in pwd.getpwall()]
