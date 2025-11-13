@@ -3,6 +3,20 @@
 
 A small, cross-platform Python library for retrieving system user information.
 
+## Build
+
+We use Rubisco to build GitHub release.
+
+```bash
+ru dist
+```
+
+We use Hatchling to build PyPI release.
+
+```bash
+python -m build
+```
+
 ## Installation
 
 - Prerequisites: Python 3.8 or newer.
@@ -11,8 +25,7 @@ A small, cross-platform Python library for retrieving system user information.
 Install locally (recommended inside a virtual environment):
 
 ```bash
-python -m pip install --upgrade pip
-python -m pip install .
+python -m pip install getuser
 ```
 
 ## Quick Start

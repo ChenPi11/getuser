@@ -30,6 +30,7 @@ dev = [
     "pylint",
     "pyright",
     "pytest",
+    "build",
 ]
 ruff = ["ruff"]
 
